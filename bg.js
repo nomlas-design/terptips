@@ -2,68 +2,6 @@
     "use strict";
 
     function Ge(e, n, r) {
-        for (var t, i = document.getElementById(e), o = i.innerHTML.replace("&amp;", "&").split(""), a = "", u = 0, f = o.length; u < f; u++) a += (t = o[u].replace("&", "&amp")).trim() ? '<span class="letter-' + u + '">' + t + "</span>" : "&nbsp;";
-        i.innerHTML = a;
-        setTimeout(function() {
-            i.className = "transition-in " + (r || ""), "function" == typeof n && setTimeout(n, 200 * o.length)
-        }, 500 * Math.random() + 500)
-    }
-    ze.requestAnimFrame = ze.requestAnimationFrame || ze.webkitRequestAnimationFrame || ze.mozRequestAnimationFrame || function(e) {
-        ze.setTimeout(e, 1e3 / 60)
-    }, ze.onload = function() {
-        var t;
-        Ge("h1"), Ge("h2"), Ge("h3"), Ge("h4", function() {
-            document.getElementById("h5").className = "visible"
-        });
-        var i;
-
-        function e() {
-            var e = document.getElementById("mouse");
-            e.className = "hidden", setTimeout(function() {
-                e.className = "hidden off"
-            }, 2e3);
-
-            function n(e) {
-                (i = t.createBufferSource()).connect(t.destination), i.buffer = e, i.onended = function() {
-                    i.loop = !1
-                }, i.start(0), i.loop = !0
-            }
-            t.resume().catch(function(e) {
-                console.log("reason", e)
-            });
-            var r = new XMLHttpRequest;
-            r.onload = function() {
-                t.decodeAudioData(r.response, function(e) {
-                    n(e)
-                })
-            }, r.open("GET", "audio/es_intrepid_dye_o.mp3"), r.responseType = "arraybuffer", r.send()
-        }
-
-        function n(e) {
-            e.requestFullscreen ? e.requestFullscreen() : e.mozRequestFullScreen ? e.mozRequestFullScreen() : e.webkitRequestFullscreen ? e.webkitRequestFullscreen() : e.msRequestFullscreen && e.msRequestFullscreen()
-        }
-
-        function r(e, n) {
-            if (! function(e, n) {
-                    return null != n && "undefined" != typeof Symbol && n[Symbol.hasInstance] ? !!n[Symbol.hasInstance](e) : e instanceof n
-                }(e, n)) throw new TypeError("Cannot call a class as a function")
-        }
-
-        function o(e, n) {
-            for (var r = 0; r < n.length; r++) {
-                var t = n[r];
-                t.enumerable = t.enumerable || !1, t.configurable = !0, "value" in t && (t.writable = !0), Object.defineProperty(e, t.key, t)
-            }
-        }
-
-        function a(e, n, r) {
-            return n && o(e.prototype, n), r && o(e, r), e
-        }
-        ze.addEventListener("click", function() {
-            t || (t = new(ze.AudioContext || ze.webkitAudioContext), e(), n(document.documentElement))
-        }), ze.addEventListener("touchstart", function() {
-            t || (t = new(ze.AudioContext || ze.webkitAudioContext), e(), n(document.documentElement))
-        });
         var u = document.getElementsByTagName("canvas")[0];
         ye();
         var l = {
